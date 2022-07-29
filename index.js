@@ -2,7 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const apiRouter = require('./api');
 const { client } = require('./db');
-const PORT = 3000;
+const { PORT = 3000 } = process.env;
 const server = express();
 
 client.connect();
