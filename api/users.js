@@ -6,7 +6,6 @@ require('dotenv').config();
 
 usersRouter.use((req, res, next) => {
   console.log("A request is being made to /users");
-
   next();
 });
 
@@ -49,7 +48,6 @@ usersRouter.post('/register', async (req, res, next) => {
 usersRouter.post('/login', async (req, res, next) => {
   const { username, password } = req.body;
 
-  // request must have both
   if (!username || !password) {
     next({
       name: "MissingCredentialsError",
